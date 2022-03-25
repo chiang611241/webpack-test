@@ -5,12 +5,19 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.dev.js",
-    "prod": "webpack --config webpack.config.prod.js"
+    "prod": "webpack --config webpack.config.prod.js",
+    "lint": "eslint --ignore-path .gitignore .",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json)\"",
+    "format": "npm run prettier -- --write",
+    "check-format": "npm run prettier -- --list-different",
+    "validate": "npm run check-format && npm run lint",
+    "precommit": "lint-staged"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.4",
     "@babel/preset-react": "^7.14.5",
+    "@types/react": "^17.0.43",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
     "eslint": "^7.32.0",
@@ -20,6 +27,8 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.25.1",
     "html-webpack-plugin": "^5.3.2",
+    "ts-loader": "^9.2.8",
+    "typescript": "^4.6.3",
     "webpack": "^5.70.0",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.1.1"
