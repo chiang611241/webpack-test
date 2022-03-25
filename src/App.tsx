@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Card from './components/card';
+
 
 const App = () => {
   const [num, setNum] = useState(0);
@@ -7,8 +9,11 @@ const App = () => {
   };
   return (
     <div>
-      <p>{num}</p>
-      <button onClick={onChange} type="button">Add</button>
+      <Card
+        title="Hello world"
+        value={num}
+        onChange={onChange}
+      />
     </div>
   );
 };
