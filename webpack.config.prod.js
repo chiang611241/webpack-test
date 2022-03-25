@@ -29,6 +29,10 @@ module.exports = {
           extensions: ['.ts', '.tsx', '.js', '.jsx'],
         },
       },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   plugins: [
